@@ -23,7 +23,7 @@ driver = Selenium::WebDriver.for(:remote,
   :url => "https://hub-cloud.browserstack.com/wd/hub",
   :desired_capabilities => caps)
 
-for i in 1..10
+for i in 1..2
 	driver.get 'https://www.google.com/'
 	print "i got in"
 	element = driver.find_element(:name, 'q')
