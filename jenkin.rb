@@ -4,6 +4,8 @@ require 'selenium-webdriver'
 username = ENV["BROWSERSTACK_USERNAME"]
 access_key = ENV["BROWSERSTACK_ACCESS_KEY"]
 build_name = ENV["BROWSERSTACK_BUILD_NAME"]
+browserstack_local = ENV["BROWSERSTACK_LOCAL"]
+identifier = ENV["BROWSERSTACK_LOCAL_IDENTIFIER"]
 
 caps = Selenium::WebDriver::Remote::Capabilities.new
 caps["os"] = "Windows"
@@ -14,6 +16,8 @@ caps["name"] = "BStack-[Jenkins] Sample Test" # test name
 caps["build"] = build_name # CI/CD job name using BROWSERSTACK_BUILD_NAME env variable
 caps["browserstack.user"] = username
 caps["browserstack.key"] = access_key
+caps["browserstack.local"] = browserstack_local
+caps["browserstack.localIdentifier"] = identifier
 
 driver = Selenium::WebDriver.for(:remote,
   :url => "https://hub-cloud.browserstack.com/wd/hub",
