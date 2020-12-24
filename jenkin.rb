@@ -23,15 +23,10 @@ driver = Selenium::WebDriver.for(:remote,
   :url => "https://hub-cloud.browserstack.com/wd/hub",
   :desired_capabilities => caps)
 
-for i in 1..2
+#for i in 1..2
 	driver.get 'https://www.google.com/'
 	print "i got in"
-	element = driver.find_element(:name, 'q')
-	element.send_keys "BrowserStack"
-	element.submit
-	#sleep 2
-	#puts driver.title
-end
+#end
 #driver.execute_script("browserstack_executor: {\"action\": \"setSessionName\", \"arguments\": {\"name\": \"rest_api_session\", \"status\": \"failed\", \"reason\": \"verification\" }}")
 driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status": "failed", "reason": "Title Verification Passed."}}')
 driver.quit
