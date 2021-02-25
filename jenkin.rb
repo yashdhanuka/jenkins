@@ -1,8 +1,8 @@
 require 'rubygems'
 require 'selenium-webdriver'
 
-username = ENV["BROWSERSTACK_USERNAME"]
-access_key = ENV["BROWSERSTACK_ACCESS_KEY"]
+username = "qig1"
+access_key = "v6hyyyxtcwmpSMDzdPWD"
 build_name = ENV["BROWSERSTACK_BUILD_NAME"]
 browserstack_local = ENV["BROWSERSTACK_LOCAL"]
 identifier = ENV["BROWSERSTACK_LOCAL_IDENTIFIER"]
@@ -20,7 +20,7 @@ caps["browserstack.local"] = browserstack_local
 caps["browserstack.localIdentifier"] = identifier
 
 driver = Selenium::WebDriver.for(:remote,
-  :url => "https://hub-cloud.browserstack.com/wd/hub",
+  :url => "https://hub-k8s-wtf2.bsstag.com:80/wd/hub",
   :desired_capabilities => caps)
 
 #for i in 1..2
