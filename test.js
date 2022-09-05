@@ -42,7 +42,6 @@ const capabilities1 = {
     'bstack:options' : {
         "os": "Windows",
         "osVersion": "10",
-        "buildName" : build_name,
         "sessionName" : "Parallel test 2",
     },
     "browserName": "firefox",
