@@ -40,11 +40,12 @@ const capabilities1 = {
     "osVersion" : "10",
     "sessionName" : "BStack Build Name: " + buildName,
     "local" : local,
+    "buildName": buildName,
     "localIdentifier" : localIdentifier,
     "userName" : username,
     "accessKey" : accessKey,
     "seleniumVersion" : "4.0.0",
   },
     "browserName" : "Chrome",
-    }
+  }
 runTestWithCaps(capabilities1);
