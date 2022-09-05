@@ -29,17 +29,12 @@ async function runTestWithCaps (capabilities) {
   await driver.quit();
 }
 
-const build_name = BROWSERSTACK_BUILD_NAME
-const browserstack_local = BROWSERSTACK_LOCAL
-const identifier = BROWSERSTACK_LOCAL_IDENTIFIER
 const capabilities1 = {
     'bstack:options' : {
         "deviceName": "iPhone XS",
         "osVersion": "15",
-        "buildName" : build_name,
         "sessionName" : "Parallel test 1",
-        "browserstack.local": browserstack_local,
-        "browserstack.localIdentifier": identifier,
+        "browserstack.local": true,
     },
     "browserName": "ios",
     }
