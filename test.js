@@ -28,11 +28,10 @@ async function runTestWithCaps (capabilities) {
   }
   await driver.quit();
 }
-const username = ENV["BROWSERSTACK_USERNAME"]
-const access_key = ENV["BROWSERSTACK_ACCESS_KEY"]
-const build_name = ENV["BROWSERSTACK_BUILD_NAME"]
-const browserstack_local = ENV["BROWSERSTACK_LOCAL"]
-const identifier = ENV["BROWSERSTACK_LOCAL_IDENTIFIER"]
+
+const build_name = BROWSERSTACK_BUILD_NAME
+const browserstack_local = BROWSERSTACK_LOCAL
+const identifier = BROWSERSTACK_LOCAL_IDENTIFIER
 const capabilities1 = {
     'bstack:options' : {
         "deviceName": "iPhone XS",
