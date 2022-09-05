@@ -47,15 +47,4 @@ const capabilities1 = {
   },
     "browserName" : "Chrome",
     }
-const capabilities3 = {
-    'bstack:options' : {
-        "os": "OS X",
-        "osVersion": "Big Sur",
-        "buildName" : "browserstack-build-1",
-        "sessionName" : "Parallel test 3",
-    },
-    "browserName": "safari",
-    "browserVersion": "14.1",
-    }
 runTestWithCaps(capabilities1);
-runTestWithCaps(capabilities3);
