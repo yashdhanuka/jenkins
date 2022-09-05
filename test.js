@@ -1,4 +1,5 @@
 const webdriver = require('selenium-webdriver');
+
 async function runTestWithCaps (capabilities) {
   let driver = new webdriver.Builder()
     .usingServer('http://yashdhanuka_jh7JRC:uqKifuEYf7jyhbrW3xyv@hub-cloud.browserstack.com/wd/hub')
@@ -28,24 +29,23 @@ async function runTestWithCaps (capabilities) {
   }
   await driver.quit();
 }
-
+username = process.env.BROWSERSTACK_USERNAME
+accessKey = process.env.BROWSERSTACK_ACCESS_KEY
+buildName = process.env.BROWSERSTACK_BUILD_NAME
+local = process.env.BROWSERSTACK_LOCAL
+localIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER
 const capabilities1 = {
-    'bstack:options' : {
-        "deviceName": "iPhone XS",
-        "osVersion": "15",
-        "sessionName" : "Parallel test 1",
-    },
-    "browserName": "ios",
-    }
- const capabilities2 = {
-    'bstack:options' : {
-        "os": "Windows",
-        "osVersion": "10",
-        "sessionName" : "Parallel test 2",
-    },
-    "browserstack.local": true,
-    "browserName": "firefox",
-    "browserVersion": "102.0",
+  'bstack:options' : {
+    "os" : "Windows",
+    "osVersion" : "10",
+    "sessionName" : "BStack Build Name: " + buildName,
+    "local" : local,
+    "localIdentifier" : localIdentifier,
+    "userName" : username,
+    "accessKey" : accessKey,
+    "seleniumVersion" : "4.0.0",
+  },
+    "browserName" : "Chrome",
     }
 const capabilities3 = {
     'bstack:options' : {
@@ -58,5 +58,4 @@ const capabilities3 = {
     "browserVersion": "14.1",
     }
 runTestWithCaps(capabilities1);
-runTestWithCaps(capabilities2);
 runTestWithCaps(capabilities3);
