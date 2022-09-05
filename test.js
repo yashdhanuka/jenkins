@@ -34,7 +34,6 @@ const capabilities1 = {
         "deviceName": "iPhone XS",
         "osVersion": "15",
         "sessionName" : "Parallel test 1",
-        "browserstack.local": true,
     },
     "browserName": "ios",
     }
@@ -44,6 +43,7 @@ const capabilities1 = {
         "osVersion": "10",
         "sessionName" : "Parallel test 2",
     },
+    "browserstack.local": true,
     "browserName": "firefox",
     "browserVersion": "102.0",
     }
